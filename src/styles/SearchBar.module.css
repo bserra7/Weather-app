@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Mulish&display=swap');
 
 .searchInput{
-    border-radius: 8px;
+    border-radius: 20px;
     border: 1px #383838;
-    height: 35px;
-    padding-left: 10px;
+    height: 40px;
+    padding-left: 15px;
+}
+.searchInput:focus{
+    box-shadow: 2px 2px 5px rgb(19, 137, 255), -2px 2px 5px rgb(19, 137, 255), 2px -2px 5px rgb(19, 137, 255), -2px -2px 5px rgb(19, 137, 255);
+    outline: none;
 }
 .searchBtn{
-    height: 35px;
-    border-radius: 8px;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 20px;
     background-color: rgb(19, 137, 255);
     color: white;
     font-weight: 500;
     margin-left: 10px;
-    width: 80px;
     border: 1px solid rgb(0, 104, 207);
 }
 .searchBtn:hover{
@@ -22,4 +26,5 @@
 }
 .search{
     display: flex;
+    font-size: 1.2rem;
 }

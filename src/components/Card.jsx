@@ -2,15 +2,19 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import s from '../styles/Card.module.css';
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { deleteCity } from '../redux/actions';
 
 export default function Card(props) {
   const location = useLocation();
+  const dispatch = useDispatch();
+
   return (
     <NavLink className={`${s.link} ${s.card}`} to={`city/${props.id}`}>
       <div>
         <div className={`${s.weatherHeader}`}>    
         <div className={`${s.city}`}>{props.name}, {props.country}</div>
-        <div className={`${s.Btn}`}><button className={`${s.closeBtn}`} onClick={(e)=>{e.preventDefault(); props.onClose(props.id); location.pathname="/"}}>X</button></div>
+        <div className={`${s.Btn}`}><button className={`${s.closeBtn}`} onClick={(e)=>{e.preventDefault(); dispatch(deleteCity(props.id)); location.pathname="/"}}>X</button></div>
         </div>
         <div className={s.actualTemp}>
         <div className={`${s.temp}`}><span className={`${s.spanBolder} ${s.spnTemp}`}>Actual</span><span>{props.temp}°C</span></div>

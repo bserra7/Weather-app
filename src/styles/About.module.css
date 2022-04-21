@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Mulish&display=swap');
+
+.container{
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    font-family: 'Mulish';
+    font-size: 1.2rem;
+}
+h2, p{
+    padding-top: 15px;
+}

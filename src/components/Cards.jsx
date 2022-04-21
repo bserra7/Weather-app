@@ -2,17 +2,21 @@ import React from 'react';
 import Card from './Card.jsx';
 import s from '../styles/Cards.module.css'
 import Error from './Error.jsx';
+import { useSelector } from 'react-redux';
 
-export default function Cards({cities, onClose, error, setError}) {
+export default function Cards() {
   const empty = (<div className={s.empty}><span>Aún no hay ciudades cargadas. CONSEJO: Busca una ciudad para conocer su clima.</span></div>);
+  const error = useSelector(state => state.error);
+  
+  const cities = useSelector(state => state.cities)
 
   return (
-  <React.Fragment>
-    {error ? <Error setError={setError}/> : false}
-    {cities.length <= 0 ? empty : false} 
+  <>
+    {error && <Error />}
+    {cities?.length <= 0 ? empty : false} 
     <div className={`${s.cardsContainer}`}>
       {
-        cities.map(city => (
+        cities?.map(city => (
           <Card 
           key={city.id}
           id={city.id}
@@ -24,11 +28,10 @@ export default function Cards({cities, onClose, error, setError}) {
           humidity={city.humidity}
           feels={city.feels}
           weather={city.weather}
-          img={city.img}
-          onClose={onClose}/>
+          img={city.img}/>
         )) 
       }
       </div>
-  </React.Fragment>
+  </>
   )
 };

@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 import s from '../styles/City.module.css';
 import Error from "./Error";
+import { useDispatch, useSelector } from "react-redux";
+import { filterCity } from "../redux/actions";
 
-export default function City({city, onClose}){
+export default function City({id}){
+    const dispatch = useDispatch();
+    const city = useSelector(state => state?.city);
+
+    useEffect(()=>{
+        dispatch(filterCity(id))
+    },[])
+
     return(
-        <> {city ?
+        <> { typeof city === 'object' && Object.keys(city)?.length ?
         <div className={s.cityContainer}>
             <div className={s.cityWrapper}>
                 <h2>{city.name}, {city.country}</h2>
@@ -33,8 +42,7 @@ export default function City({city, onClose}){
             humidity={city.humidity}
             feels={city.feels}
             weather={city.weather}
-            img={city.img}
-            onClose={onClose}/>
+            img={city.img}/>
         </div> : <Error/>}
         </>        
     )

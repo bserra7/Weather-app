@@ -1,5 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
+import { setError } from "../redux/actions";
 
 const ShowError = styled.div`
     border: 2px solid #a20000;
@@ -28,8 +31,16 @@ const Button = styled.button`
     }
 `
 
-export default function Error({setError}){
+export default function Error(){
+    const dispatch = useDispatch();
+    const history = useHistory();
+    
+    const handleClose = () => {
+        dispatch(setError(false))
+        history.push('/');
+    }
+
     return(
-        <ShowError><span>ERROR: La ciudad requerida no se encontró</span> <Button onClick={()=>setError(false)}>[CERRAR]</Button></ShowError>
+        <ShowError><span>ERROR: La ciudad requerida no se encontró</span> <Button onClick={handleClose}>[CERRAR]</Button></ShowError>
     )
 }

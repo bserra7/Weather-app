@@ -16,7 +16,7 @@
     font-family: 'Mulish';
 }
 .card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     color: #505050;
     transition: ease-in 0.3s;
 }
