@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Mulish&display=swap');
+
+.card{
+    width: 20%;
+    min-width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px 20px;
+    background: linear-gradient(to bottom right, rgba(214, 239, 255, 0.9), 65%, #0078c3cc);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: ease-out 0.3s;
+    /* box-shadow: 3px 3px 5px 1px #dddddd; */
+    box-shadow: 3px 3px 5px 1px #6262628a;
+    font-family: 'Mulish';
+}
+.card:hover{
+    transform: scale(1.1);
+    color: #505050;
+    transition: ease-in 0.3s;
+}
+.link:hover{
+    text-decoration: none;
+}
+.weatherHeader{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+.city{
+    font-size: 1.6rem;
+    width: 100%;
+    font-weight: 600;
+    justify-content: center;
+    padding-left: 10%;
+    color: #505050;
+}
+.Btn{
+    justify-content: flex-end;
+}
+.closeBtn{
+    border-radius: 99px;
+    border: 1px solid #505050;
+    width: 30px;
+    height: 30px;
+    font-weight: 700;
+    background-color: #505050;
+    color: white;
+    margin-right: 10px;
+    float: right;
+}
+.closeBtn:hover{
+    background-color: #ae0000;
+    border: 1px solid #ae0000;
+}
+.actualTemp{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.weatherData{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.max,
+.min,
+.weather{
+    display: flex; 
+    width: 30%;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 10px #505050;
+}
+.weather img{
+    width: 90px;
+}
+.temp{
+    width: 50%;
+    display: flex; 
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 10px #505050;
+}
+.max,
+.min{
+    padding-top: 15px; 
+    flex-direction: column;
+}
+.temp{
+    flex-direction: column;
+}
+.spanBolder{
+    font-weight: 600;
+}
+.spnTemp{
+    font-size: 1.05rem;
+    padding-top: 5px;
+}
+
+@media (max-width: 500px){
+    .card{
+        width: 100%;
+        margin-top: 10px;
+    }.card:hover{
+        transform: scale(0.95);
+        transition: ease-in 0.3s;
+    }
+}

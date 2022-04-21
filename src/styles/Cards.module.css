@@ -1,0 +1,22 @@
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #ececec;
+    padding: 20px 0;
+    border-top: 2px solid #383838;
+    border-bottom: 2px solid #383838;
+}
+.empty{
+    border: 2px solid #0065a2;
+    border-bottom: 2px solid a20000;
+    background-color: #0078c363;
+    font-family: Mulish;
+    font-weight: 500;
+    color: #0065a2;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}

@@ -1,0 +1,33 @@
+.App {
+    text-align: center;
+  }
+  .App h1{
+    font-family: Mulish;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  .logoApp{
+    width: 150px;
+  }
+  .active{
+    color:crimson;
+  }
+  .links{
+    text-decoration: none;
+    text-decoration-color: none;
+    color: #383838;
+  }
+  .links:hover{
+    color: #383838;
+    text-decoration: none;
+    text-decoration-color: none;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  .singleCard{
+    display: flex;
+    justify-content: center;
+  }

@@ -1,0 +1,10 @@
+.link{
+    font-family: Mulish;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.link:hover{
+    text-decoration: none;
+    color: crimson;
+    transform: scale(1.05);
+}
