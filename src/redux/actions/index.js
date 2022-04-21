@@ -1,4 +1,7 @@
-import { metersToKm, windDirection, apiKey } from '../../utils';
+import { metersToKm, windDirection } from '../../utils';
+import axios from 'axios';
+
+const apiKey = process.env.REACT_APP_API_KEY;
 
 export const SEARCH_CITY = 'SEARCH_CITY';
 export const SET_ERROR = 'SET_ERROR';
@@ -28,8 +31,8 @@ export const deleteCity = (id) => {
 
 export const searchCity = (city) => {
     return (dispatch) => {
-        return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
-        .then(response => response.json())
+        return axios.get(`?q=${city}&appid=${apiKey}&units=metric`)
+        .then(response => response.data)
         .then((data) => {
           if(data.main !== undefined){
             const city = {

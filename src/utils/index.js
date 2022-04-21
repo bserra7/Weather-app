@@ -7,8 +7,6 @@ import V_SE from '../img/V_SE.png';
 import V_SO from '../img/V_SO.png'
 import V_NO from '../img/V_NO.png';
 
-export const apiKey = '915b5bd57127ee2070ba3eca463390d3';
-
 export function metersToKm(meters){
     let number = (meters/1000).toFixed(1);
     return number
